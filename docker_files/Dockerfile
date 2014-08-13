@@ -20,10 +20,9 @@ ADD        ./steamcmd.cmd /etc/service/steamcmd/steamcmd.cmd
 # Install the server on startup
 RUN       (echo "#!/bin/sh\ncd /etc/service/steamcmd\n./steamcmd.sh +runscript steamcmd.cmd\n" > /etc/rc.local)
 
-
-# Creates Steam Service
-#RUN       (echo "#!/bin/sh\n./steamcmd.sh +runscript steamcmd.cmd\nexec ./steamcmd.sh +runscript steamcmd.cmd\n" > ./run) && \
-#          (chmod +x ./run)
+# Creates server as a service
+ADD        ./run_server.sh /etc/service/steamcmd/run
+RUN       chmod +x ./run
 
 # Cleans up APT when done.
 RUN        apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
