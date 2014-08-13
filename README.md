@@ -35,7 +35,7 @@ sudo docker build -t mysteamserver ./docker_files
 ## Run it
 
 ```bash
-sudo docker run --rm -ti -p 27015:27015 -p 27020:27020 -v `pwd`/mounted:/root/mounted mysteamserver /sbin/my_init  -- bash -l
+sudo docker run --rm -ti -p 27015:27015 -p 27020:27020 -p 27037:27037 -v `pwd`/mounted:/root/mounted mysteamserver /sbin/my_init  -- bash -l
 ```
 
 ## About it
