@@ -42,7 +42,7 @@ sudo docker run --rm -ti -p 27015:27015 -p 27020:27020 -v `pwd`/mounted:/root/mo
 
 Currently, this docker is configured to run a **Classic Competitive CS:GO dedicated server**.
 
-## How to change run your another dedicated server ?
+## How to run another dedicated server ?
 
 2 files need to be modified, `steamcmd.cmd` and `run_server.sh`.  
 
