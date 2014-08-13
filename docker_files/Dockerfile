@@ -3,7 +3,7 @@ ENV       HOME /root
 RUN       /etc/my_init.d/00_regen_ssh_host_keys.sh
 CMD       ["/sbin/my_init"]
 
-
+# SteamCMD is a 32-bit binary, 32-bit libraries are required -- Seriously?
 RUN       dpkg --add-architecture i386
 RUN       apt-get -y update
 RUN       apt-get -y install lib32gcc1 wget
