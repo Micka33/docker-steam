@@ -63,14 +63,13 @@ force_install_dir /root/mounted/
 // 740: Counter-Strike: Global Offensive Dedicated Server
 app_update 740 validate
 
-
 //It should always end by quit
 quit
 ```
 
 Change the steam application id `740` to yours. [here](https://developer.valvesoftware.com/wiki/Dedicated_Servers_List#Linux_Dedicated_Servers) is a list of all steam application IDs.
 
-Some dedicated server required to be logged in.
+Some dedicated server require to be logged in.  
 Change like the following:
 ```
 //login anonymous
@@ -98,7 +97,7 @@ exec ./srcds_run -game csgo -console -usercon +game_type 0 +game_mode 1 +mapgrou
 # exec ./srcds_run -game csgo -console -usercon +game_type 1 +game_mode 2 +mapgroup mg_allclassic
 ```
 
-There are some examples CS:GO modes already configured in this file.
+There are some examples CS:GO modes already configured in this file.  
 Be sure to always run your server using `exec`.  
 
 Refer to the approriate steam server configuration page. See [this link](https://developer.valvesoftware.com/wiki/Steam_Application_IDs#Server_Files), and [this link](https://developer.valvesoftware.com/wiki/Dedicated_Servers_List#Linux_Dedicated_Servers) for all servers.
