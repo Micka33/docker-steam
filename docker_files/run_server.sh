@@ -1,5 +1,6 @@
 #!/bin/sh
 cd /root/mounted
+export HOME="/root"
 
 # Classic Casual
 # exec ./srcds_run -game csgo -console -usercon +game_type 0 +game_mode 0 +mapgroup mg_active
