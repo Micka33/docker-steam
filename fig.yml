@@ -1,3 +1,4 @@
+# sudo docker run --rm -ti -p 27015:27015 -p 27016:27016 -p 27017:27017 -p 27018:27018 -p 27019:27019 -p 27021:27021 -p 27022:27022 -p 27023:27023 -p 27024:27024 -p 27025:27025 -p 27026:27026 -p 27027:27027 -p 27028:27028 -p 27029:27029 -p 27030:27030 -p 27031:27031 -p 27032:27032  -v `pwd`/mounted:/root/mounted mysteamserver /sbin/my_init  -- bash -l
 mysteamserver:
   build: ./docker_files
   volumes:

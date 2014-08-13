@@ -14,7 +14,7 @@ fi
 # Classic Casual
 # exec ./srcds_run -game csgo -console -usercon +game_type 0 +game_mode 0 +mapgroup mg_active
 # Classic Competitive
-exec ./srcds_run -game csgo -console -usercon -ip 0.0.0.0 -port 27015 +game_type 0 +game_mode 1 
+exec ./srcds_run -game csgo -console -usercon +ip 0.0.0.0 +hostport 27015 +game_type 0 +game_mode 1 
 # Arms Race
 # exec ./srcds_run -game csgo -console -usercon +game_type 1 +game_mode 0 +mapgroup mg_armsrace
 # Demolition
