@@ -37,3 +37,68 @@ sudo docker build -t mysteamserver ./docker_files
 ```bash
 sudo docker run --rm -ti -p 27015:27015 -p 27020:27020 -v `pwd`/mounted:/root/mounted mysteamserver /sbin/my_init  -- bash -l
 ```
+
+## About it
+
+Currently, this docker is configured to run a **Classic Competitive CS:GO dedicated server**.
+
+## How to change run your another dedicated server ?
+
+2 files need to be modified, `steamcmd.cmd` and `run_server.sh`.  
+
+
+[docker_files/steamcmd.cmd](https://github.com/Micka33/docker-steam/blob/master/docker_files/steamcmd.cmd)
+```
+// anonymous login is required in order to download CS:GO
+// see https://developer.valvesoftware.com/wiki/SteamCMD#Automating_SteamCMD
+// for more info
+login anonymous
+
+// Where all the files will be stored
+// Don't change, unless you know what you are doing
+force_install_dir /root/mounted/
+
+// See https://developer.valvesoftware.com/wiki/Dedicated_Servers_List#Linux_Dedicated_Servers
+// to find your dedicated server ID
+// 740: Counter-Strike: Global Offensive Dedicated Server
+app_update 740 validate
+
+
+//It should always end by quit
+quit
+```
+
+Change the steam application id `740` to yours. [here](https://developer.valvesoftware.com/wiki/Dedicated_Servers_List#Linux_Dedicated_Servers) is a list of all steam application IDs.
+
+Some dedicated server required to be logged in.
+Change like the following:
+```
+//login anonymous
+@NoPromptForPassword 1
+login <username> <password>
+```
+
+---
+
+
+[docker_files/run_server.sh](https://github.com/Micka33/docker-steam/blob/master/docker_files/run_server.sh)
+```bash
+#!/bin/sh
+cd /root/mounted
+
+# Classic Casual
+# exec ./srcds_run -game csgo -console -usercon +game_type 0 +game_mode 0 +mapgroup mg_active
+# Classic Competitive
+exec ./srcds_run -game csgo -console -usercon +game_type 0 +game_mode 1 +mapgroup mg_bomb_se
+# Arms Race
+# exec ./srcds_run -game csgo -console -usercon +game_type 1 +game_mode 0 +mapgroup mg_armsrace
+# Demolition
+# exec ./srcds_run -game csgo -console -usercon +game_type 1 +game_mode 1 +mapgroup mg_demolition
+# Deathmatch
+# exec ./srcds_run -game csgo -console -usercon +game_type 1 +game_mode 2 +mapgroup mg_allclassic
+```
+
+There are some examples CS:GO modes already configured in this file.
+Be sure to always run your server using `exec`.  
+
+Refer to the approriate steam server configuration page. See [this link](https://developer.valvesoftware.com/wiki/Steam_Application_IDs#Server_Files), and [this link](https://developer.valvesoftware.com/wiki/Dedicated_Servers_List#Linux_Dedicated_Servers) for all servers.
