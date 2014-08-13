@@ -10,7 +10,7 @@ force_install_dir /root/mounted/
 // See https://developer.valvesoftware.com/wiki/Dedicated_Servers_List#Linux_Dedicated_Servers
 // to find your dedicated server ID
 // 740: Counter-Strike: Global Offensive Dedicated Server
-app_update 740 validate
+app_update 740
 
 
 //It should always end by quit
