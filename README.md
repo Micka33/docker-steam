@@ -35,7 +35,7 @@ sudo docker build -t mysteamserver ./docker_files
 ## Run it
 
 ```bash
-sudo docker run --rm -ti -p 27015:27015 -p 27020:27020 -p 27037:27037 -v `pwd`/mounted:/root/mounted mysteamserver /sbin/my_init  -- bash -l
+sudo docker run --rm -ti -p 27015:27015 -p 27016:27016 -p 27017:27017 -p 27018:27018 -p 27019:27019 -p 27020:27020 -p 27021:27021 -p 27022:27022 -p 27023:27023 -p 27024:27024 -p 27025:27025 -p 27026:27026 -p 27027:27027 -p 27028:27028 -p 27029:27029 -p 27030:27030 -p 27031:27031 -p 27032:27032 -p 27033:27033 -p 27034:27034 -p 27035:27035 -p 27036:27036 -p 54168:54168 -p 27005:27005 -p 26901:26901   -p 27015:27015/udp -p 27016:27016/udp -p 27017:27017/udp -p 27018:27018/udp -p 27019:27019/udp -p 27020:27020/udp -p 27021:27021/udp -p 27022:27022/udp -p 27023:27023/udp -p 27024:27024/udp -p 27025:27025/udp -p 27026:27026/udp -p 27027:27027/udp -p 27028:27028/udp -p 27029:27029/udp -p 27030:27030/udp -p 27031:27031/udp -p 27032:27032/udp -p 27033:27033/udp -p 27034:27034/udp -p 27035:27035/udp -p 27036:27036/udp -p 54168:54168/udp -p 27005:27005/udp -p 26901:26901/udp -v `pwd`/mounted:/root/mounted mysteamserver /sbin/my_init  -- bash -l
 ```
 
 ## About it
